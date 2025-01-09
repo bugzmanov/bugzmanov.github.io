@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://yoursite.com/sitemap.xml 
+Sitemap: https://bugzmanov.github.io/sitemap.xml 
+Sitemap: https://bugzmanov.github.io/cleancode-critique/sitemap.xml
