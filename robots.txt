@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: 
 
 Sitemap: https://bugzmanov.github.io/sitemap.xml 
 Sitemap: https://bugzmanov.github.io/cleancode-critique/sitemap.xml
