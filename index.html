@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head> 
 <style>
         /* Reset styles */
@@ -15,6 +16,26 @@
             font-size: 11pt;
             line-height: 1.15;
         }
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+        }
+
+
+        .sidebar section {
+            float:left; 
+            position:fixed; 
+            width: 270px;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
 
         /* Typography */
         .heading {
@@ -119,290 +140,343 @@
         ul {
             margin: 2px;
         }
+
+        .sidebar {
+            flex: 0 0 270px;
+        }
+        
+        /* Mobile styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                margin-top: 20px; 
+                flex: initial !important; 
+                width: 100% !important;
+            }
+
+            .sidebar section {
+                float:none; 
+                position:unset; 
+                width: 100%;
+                text-align:center;
+            }
+
+            .main-content {
+                flex:1;
+                width: 100%;
+            }
+
+            body {
+                padding: 0.5rem;
+                font-size: 10pt;
+            }
+
+            .experience-table, 
+            .experience-table tbody, 
+            .experience-table tr, 
+            .experience-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .company-cell {
+                border-right: none;
+                border-bottom: 1px solid #000000;
+                padding: 5pt 0;
+            }
+
+            .details-cell {
+                padding: 5pt 0 15pt 0;
+            }
+
+            .tech-stack {
+                line-height: 1.8;
+            }
+
+            .heading {
+                font-size: 14pt;
+            }
+
+            .section-title {
+                font-size: 13pt;
+            }
+        } 
     </style>
 
 <body>
-    <section style="float:left; position:fixed; width: 270px"> 
+    <div class="container">
+        <div class="sidebar">
+            <section > 
+                <center>
+                    <img style="width:120px;border-radius: 50%; border: 2px solid black;" src="https://media.licdn.com/dms/image/v2/C5603AQGNIp3NcUTVtw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1599741663665?e=1741824000&v=beta&t=FNXSqCyqieFIg8x4rXfz88L85Eu-_2m5apzkUdCBk-s"/>
+                </center>
+                <h1 class="heading">Rafael Bagmanov</h1>
 
-    <center>
-        <img style="width:120px;border-radius: 50%; border: 2px solid black;" src="https://media.licdn.com/dms/image/v2/C5603AQGNIp3NcUTVtw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1599741663665?e=1741824000&v=beta&t=FNXSqCyqieFIg8x4rXfz88L85Eu-_2m5apzkUdCBk-s"/>
-    </center>
-    <h1 class="heading">Rafael Bagmanov</h1>
-    <!--<hr class="horizontal-rule">-->
+                <div class="contact-info" >
+                    <p style="padding-left:30px">Address: Greater New York Area, NY <br/>
+                       Phone: +1-(718)-upon-request</p>
 
-    <div class="contact-info" >
-        <p style="padding-left:30px">Address: Greater New York Area, NY <br/>
-           Phone: +1-(718)-upon-request</p>
-
-        <p style="text-align:center"><a target="_blank" href="http://github.com/bugzmanov">github</a> | 
-           <a target="_blank" href="http://linkedin.com/in/bugzmanov">linkedin</a> | 
-           <a target="_blank" href="https://twitter.com/bugzmanov">twitter</a>
-        </p>
-        <p style="text-align:center">...<br/><br/>
-        <a href="">Download CV (pdf)</a>
-        </p> 
-    </div>
-    </section> 
-    <section style="float:right; width: 700px">
-
-    <!--<h2 class="heading">Rafael Bagmanov</h1>-->
-    <!--<hr class="horizontal-rule">-->
-    <!---->
-    <!--<div class="contact-info" >-->
-    <!--    <p>Email: <a href="mailto:removed@removed.com">removed@dontknow.com</a> -->
-    <!--       Address: New York, NY, 11222 -->
-    <!--       Phone: +1-(718)-removed>-->
-    <!--    <p>Social: <a href="http://github.com/bugzmanov">github.com/bugzmanov</a> | -->
-    <!--       <a href="http://linkedin.com/in/bugzmanov">linkedin.com/in/bugzmanov</a> | -->
-    <!--       <a href="https://twitter.com/bugzmanov">twitter.com/bugzmanov</a></p>-->
-    <!--</div>-->
-
-    <h2 class="section-title">Summary</h2>
-    <hr class="horizontal-rule">
-
-    <div class="contact-info" style="text-align: justify;">
-        <p><strong>Principal Software Engineer & Tech Lead</strong> with a track record of architecting and optimizing <strong>large-scale distributed systems</strong> handling <strong>petabytes of data</strong> daily. Experienced in leading cross-functional teams, building scalable infrastructure, and optimizing system performance. Strong expertise in multithreading, performance tuning, functional programming and data modeling.</p>
-        <p>Interests: <span class="tech-tag">big data</span> <span class="tech-tag">distributed systems</span> <span class="tech-tag">functional programming</span> <span class="tech-tag">mechanical sympathy</span></p>
-    </div>
-
-    <h2 class="section-title">Work Experience</h2>
-    <hr class="horizontal-rule">
-      <table class="experience-table">
-        <tr>
-            <td class="company-cell">
-                <div class="company-name">Apple Inc</div>
-                <div>Nov 2020 - Current</div>
-            </td>
-            <td class="details-cell">
-                <div class="job-title">Senior Software Engineer (ICT 4)</div>
-                <ul class="responsibilities">
-                    <li>Developing and optimizing the pricing logic and rules engine that drives Apple Store operations</li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech-tag">scala</span>
-                    <span class="tech-tag">java</span>
-                    <span class="tech-tag">apache cassandra</span>
-                    <span class="tech-tag">oracle db</span>
-                    <span class="tech-tag">apache kafka</span>
-                    <span class="tech-tag">openapi</span>
-                    <span class="tech-tag">rust</span>
+                    <p style="text-align:center"><a target="_blank" href="http://github.com/bugzmanov">github</a> | 
+                       <a target="_blank" href="http://linkedin.com/in/bugzmanov">linkedin</a> | 
+                       <a target="_blank" href="https://twitter.com/bugzmanov">twitter</a>
+                    </p>
+                    <p style="text-align:center">...<br/><br/>
+                    <a href="">Download CV (pdf)</a>
+                    </p> 
                 </div>
-            </td>
-        </tr>
+            </section> 
+        </div>
+        <div class="main-content">
+            <h2 class="section-title">Summary</h2>
+            <hr class="horizontal-rule">
 
-        <tr>
-            <td class="company-cell">
-                <div class="company-name">Integral Ad Science</div>
-                <div>Feb 2015 - Aug 2020</div>
-            </td>
-            <td class="details-cell">
-                <div class="job-title">Principal software engineer</div>
-                <ul class="responsibilities">
-                    <li>Led cross-team re-platforming efforts in core architecture and design.</li>
-                    <li>Led development and design of near real-time platform and streaming applications: fraud detection, user exposure tracking & engagement optimization, campaign monitoring</li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech-tag">scala</span>
-                    <span class="tech-tag">java</span>
-                    <span class="tech-tag">cats</span>
-                    <span class="tech-tag">apache spark</span>
-                    <span class="tech-tag">apache flink</span>
-                    <span class="tech-tag">apache kafka</span>
-                    <span class="tech-tag">aerospike</span>
-                    <span class="tech-tag">graphite</span>
-                    <span class="tech-tag">aws</span>
+            <div class="contact-info" style="text-align: justify;">
+                <p><strong>Principal Software Engineer & Tech Lead</strong> with a track record of architecting and optimizing <strong>large-scale distributed systems</strong> handling <strong>petabytes of data</strong> daily. Experienced in leading cross-functional teams, building scalable infrastructure, and optimizing system performance. Strong expertise in multithreading, performance tuning, functional programming and data modeling.</p>
+                <p>Interests: <span class="tech-tag">big data</span> <span class="tech-tag">distributed systems</span> <span class="tech-tag">functional programming</span> <span class="tech-tag">mechanical sympathy</span></p>
+            </div>
+
+            <h2 class="section-title">Work Experience</h2>
+            <hr class="horizontal-rule">
+              <table class="experience-table">
+                <tr>
+                    <td class="company-cell">
+                        <div class="company-name">Apple Inc</div>
+                        <div>Nov 2020 - Current</div>
+                    </td>
+                    <td class="details-cell">
+                        <div class="job-title">Senior Software Engineer (ICT 4)</div>
+                        <ul class="responsibilities">
+                            <li>Developing and optimizing the pricing logic and rules engine that drives Apple Store operations</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">scala</span>
+                            <span class="tech-tag">java</span>
+                            <span class="tech-tag">apache cassandra</span>
+                            <span class="tech-tag">oracle db</span>
+                            <span class="tech-tag">apache kafka</span>
+                            <span class="tech-tag">openapi</span>
+                            <span class="tech-tag">rust</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="company-cell">
+                        <div class="company-name">Integral Ad Science</div>
+                        <div>Feb 2015 - Aug 2020</div>
+                    </td>
+                    <td class="details-cell">
+                        <div class="job-title">Principal software engineer</div>
+                        <ul class="responsibilities">
+                            <li>Led cross-team re-platforming efforts in core architecture and design.</li>
+                            <li>Led development and design of near real-time platform and streaming applications: fraud detection, user exposure tracking & engagement optimization, campaign monitoring</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">scala</span>
+                            <span class="tech-tag">java</span>
+                            <span class="tech-tag">cats</span>
+                            <span class="tech-tag">apache spark</span>
+                            <span class="tech-tag">apache flink</span>
+                            <span class="tech-tag">apache kafka</span>
+                            <span class="tech-tag">aerospike</span>
+                            <span class="tech-tag">graphite</span>
+                            <span class="tech-tag">aws</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="company-cell">
+                        <div class="company-name">Pellucid Analytics</div>
+                        <div>Oct 2014 - Feb 2015</div>
+                    </td>
+                    <td class="details-cell">
+                        <div class="job-title">Senior scala developer</div>
+                        <ul class="responsibilities">
+                            <li>Designed and developed backend services for financial analytics tools.</li>
+                            <li>Optimized data modeling for complex financial reports.</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">scala</span>
+                            <span class="tech-tag">scalaz</span>
+                            <span class="tech-tag">apache cassandra</span>
+                            <span class="tech-tag">play! framework</span>
+                            <span class="tech-tag">datomic</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="company-cell">
+                        <div class="company-name">Grid Dynamics</div>
+                        <div>Feb 2012 - Oct 2014</div>
+                    </td>
+                    <td class="details-cell">
+                        <div class="job-title">Senior software engineer</div>
+                        <ul class="responsibilities">
+                            <li>Led development of <a href="https://highlyscalable.wordpress.com/2013/08/20/in-stream-big-data-processing/">streaming data platform</a> using open source solutions</li>
+                            <li>Led development and design of <a href="https://github.com/griddynamics/OpenGenesis">CI/CD platform for release engineering</a></li>
+                            <li>Participated in a project of porting <strong>apache storm 0.9.0</strong> from <strong>clojure</strong> to <strong>java</strong></li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">scala</span>
+                            <span class="tech-tag">akka</span>
+                            <span class="tech-tag">apache kafka</span>
+                            <span class="tech-tag">apache storm</span>
+                            <span class="tech-tag">clojure</span>
+                            <span class="tech-tag">apache cassandra</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="company-cell">
+                        <div class="company-name">Informatica</div>
+                        <div>Sep 2011 - Feb 2012</div>
+                    </td>
+                    <td class="details-cell">
+                        <div class="job-title">Senior software engineer</div>
+                        <ul class="responsibilities">
+                            <li>Developed and enhanced components of the <strong>Data Master Management Solution</strong></li>
+                            <li><strong>Led code quality initiatives</strong>, implementing best practices for unit testing and CI/CD pipelines</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">java</span>
+                            <span class="tech-tag">ejb</span>
+                            <span class="tech-tag">java ee</span>
+                            <span class="tech-tag">jsf</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="company-cell">
+                        <div class="company-name">Kentor</div>
+                        <div>Nov 2009 – Sep 2011</div>
+                    </td>
+                    <td class="details-cell">
+                        <div class="job-title">Senior software engineer</div>
+                        <ul class="responsibilities">
+                            <li>Designed and developed an integrated messaging solution for mobile and web, enabling <strong>near real-time communication</strong> between drivers</li>
+                            <li>Contributed to a web-based <strong>back-office application</strong> for managing customer contracts and registrations for <strong>Yota</strong></li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">java</span>
+                            <span class="tech-tag">gwt</span>
+                            <span class="tech-tag">hibernate</span>
+                            <span class="tech-tag">spring framework</span>
+                            <span class="tech-tag">rabbitmq</span>
+                            <span class="tech-tag">oracle db</span>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="company-cell">
+                        <div class="company-name">Exigen Services</div>
+                        <div>Feb 2008 - Nov 2009</div>
+                    </td>
+                    <td class="details-cell">
+                        <div class="job-title">Software engineer</div>
+                        <ul class="responsibilities">
+                            <li><strong>Developed and maintained</strong> an <strong>EJB-based platform</strong> for <strong>multi-channel customer interactions</strong>, supporting web, mobile, and call center services for a major European telecom provider.</li>
+                            <li>Implemented and optimized back-end services on <strong>BEA WebLogic</strong>, improving system reliability and maintainability</li>
+                            <li><strong>Contributed to service-oriented architecture (SOA) development</strong>, enabling interoperability across multiple business systems</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-tag">java</span>
+                            <span class="tech-tag">bea weblogic</span>
+                            <span class="tech-tag">hibernate</span>
+                            <span class="tech-tag">spring framework</span>
+                            <span class="tech-tag">service oriented architecture</span>
+                            <span class="tech-tag">ejb</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <h2 class="section-title">Skills</h2>
+            <hr class="horizontal-rule">
+
+            <div class="content-section">
+                <div class="skills-category">
+                    <span class="category-label">Programming Languages:</span>
+                    Scala, Java, Rust, Clojure, Kotlin, JavaScript/TypeScript
                 </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td class="company-cell">
-                <div class="company-name">Pellucid Analytics</div>
-                <div>Oct 2014 - Feb 2015</div>
-            </td>
-            <td class="details-cell">
-                <div class="job-title">Senior scala developer</div>
-                <ul class="responsibilities">
-                    <li>Designed and developed backend services for financial analytics tools.</li>
-                    <li>Optimized data modeling for complex financial reports.</li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech-tag">scala</span>
-                    <span class="tech-tag">scalaz</span>
-                    <span class="tech-tag">apache cassandra</span>
-                    <span class="tech-tag">play! framework</span>
-                    <span class="tech-tag">datomic</span>
+                <div class="skills-category">
+                    <span class="category-label">Distributed Systems & Streaming:</span>
+                    Apache Kafka, Apache Flink, Apache Spark, Apache Hadoop, Apache Storm
                 </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td class="company-cell">
-                <div class="company-name">Grid Dynamics</div>
-                <div>Feb 2012 - Oct 2014</div>
-            </td>
-            <td class="details-cell">
-                <div class="job-title">Senior software engineer</div>
-                <ul class="responsibilities">
-                    <li>Led development of <a href="https://highlyscalable.wordpress.com/2013/08/20/in-stream-big-data-processing/">streaming data platform</a> using open source solutions</li>
-                    <li>Led development and design of <a href="https://github.com/griddynamics/OpenGenesis">CI/CD platform for release engineering</a></li>
-                    <li>Participated in a project of porting <strong>apache storm 0.9.0</strong> from <strong>clojure</strong> to <strong>java</strong></li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech-tag">scala</span>
-                    <span class="tech-tag">akka</span>
-                    <span class="tech-tag">apache kafka</span>
-                    <span class="tech-tag">apache storm</span>
-                    <span class="tech-tag">clojure</span>
-                    <span class="tech-tag">apache cassandra</span>
+                <div class="skills-category">
+                    <span class="category-label">Databases & Storage:</span>
+                    vast experience with relational (MySQL, Oracle, PostgreSQL, DB2) and NoSQL (Apache Cassandra, Aerospike, Redis, Elasticsearch, DynamoDB) databases
                 </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td class="company-cell">
-                <div class="company-name">Informatica</div>
-                <div>Sep 2011 - Feb 2012</div>
-            </td>
-            <td class="details-cell">
-                <div class="job-title">Senior software engineer</div>
-                <ul class="responsibilities">
-                    <li>Developed and enhanced components of the <strong>Data Master Management Solution</strong></li>
-                    <li><strong>Led code quality initiatives</strong>, implementing best practices for unit testing and CI/CD pipelines</li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech-tag">java</span>
-                    <span class="tech-tag">ejb</span>
-                    <span class="tech-tag">java ee</span>
-                    <span class="tech-tag">jsf</span>
+                <div class="skills-category">
+                    <span class="category-label">Cloud & DevOps:</span>
+                    AWS (EC2, S3, MSK, Lambda, CloudFormation), Kubernetes, Docker, Terraform
                 </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td class="company-cell">
-                <div class="company-name">Kentor</div>
-                <div>Nov 2009 – Sep 2011</div>
-            </td>
-            <td class="details-cell">
-                <div class="job-title">Senior software engineer</div>
-                <ul class="responsibilities">
-                    <li>Designed and developed an integrated messaging solution for mobile and web, enabling <strong>near real-time communication</strong> between drivers</li>
-                    <li>Contributed to a web-based <strong>back-office application</strong> for managing customer contracts and registrations for <strong>Yota</strong></li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech-tag">java</span>
-                    <span class="tech-tag">gwt</span>
-                    <span class="tech-tag">hibernate</span>
-                    <span class="tech-tag">spring framework</span>
-                    <span class="tech-tag">rabbitmq</span>
-                    <span class="tech-tag">oracle db</span>
+                <div class="skills-category">
+                    <span class="category-label">Software Architecture:</span>
+                    Microservices, Event-Driven Systems, Functional Programming, Type-Driven Development
                 </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td class="company-cell">
-                <div class="company-name">Exigen Services</div>
-                <div>Feb 2008 - Nov 2009</div>
-            </td>
-            <td class="details-cell">
-                <div class="job-title">Software engineer</div>
-                <ul class="responsibilities">
-                    <li><strong>Developed and maintained</strong> an <strong>EJB-based platform</strong> for <strong>multi-channel customer interactions</strong>, supporting web, mobile, and call center services for a major European telecom provider.</li>
-                    <li>Implemented and optimized back-end services on <strong>BEA WebLogic</strong>, improving system reliability and maintainability</li>
-                    <li><strong>Contributed to service-oriented architecture (SOA) development</strong>, enabling interoperability across multiple business systems</li>
-                </ul>
-                <div class="tech-stack">
-                    <span class="tech-tag">java</span>
-                    <span class="tech-tag">bea weblogic</span>
-                    <span class="tech-tag">hibernate</span>
-                    <span class="tech-tag">spring framework</span>
-                    <span class="tech-tag">service oriented architecture</span>
-                    <span class="tech-tag">ejb</span>
+                <div class="skills-category">
+                    <span class="category-label">Performance & Optimization:</span>
+                    JVM Tuning, Multithreading, Memory Management, High-Throughput Systems
                 </div>
-            </td>
-        </tr>
-    </table>
+                <div class="skills-category">
+                    <span class="category-label">Leadership & Collaboration:</span>
+                    Technical Mentorship, Code Reviews, System Design, Cross-Functional Collaboration
+                </div>
+            </div>
 
-    <h2 class="section-title">Skills</h2>
-    <hr class="horizontal-rule">
+            <h2 class="section-title">Education & Certificates</h2>
+            <hr class="horizontal-rule">
 
-    <div class="content-section">
-        <div class="skills-category">
-            <span class="category-label">Programming Languages:</span>
-            Scala, Java, Rust, Clojure, Kotlin, JavaScript/TypeScript
-        </div>
-        <div class="skills-category">
-            <span class="category-label">Distributed Systems & Streaming:</span>
-            Apache Kafka, Apache Flink, Apache Spark, Apache Hadoop, Apache Storm
-        </div>
-        <div class="skills-category">
-            <span class="category-label">Databases & Storage:</span>
-            vast experience with relational (MySQL, Oracle, PostgreSQL, DB2) and NoSQL (Apache Cassandra, Aerospike, Redis, Elasticsearch, DynamoDB) databases
-        </div>
-        <div class="skills-category">
-            <span class="category-label">Cloud & DevOps:</span>
-            AWS (EC2, S3, MSK, Lambda, CloudFormation), Kubernetes, Docker, Terraform
-        </div>
-        <div class="skills-category">
-            <span class="category-label">Software Architecture:</span>
-            Microservices, Event-Driven Systems, Functional Programming, Type-Driven Development
-        </div>
-        <div class="skills-category">
-            <span class="category-label">Performance & Optimization:</span>
-            JVM Tuning, Multithreading, Memory Management, High-Throughput Systems
-        </div>
-        <div class="skills-category">
-            <span class="category-label">Leadership & Collaboration:</span>
-            Technical Mentorship, Code Reviews, System Design, Cross-Functional Collaboration
-        </div>
-    </div>
+            <div class="content-section">
+                <div class="skills-category">
+                    <span class="category-label">Education:</span>
+                    <ul>
+                        <li>Specialist of "Computing machinery and automated systems software". <br/>Ufa State Petroleum Technical University.<br/>Master's Level Equivalent, honor diploma.</li>
+                    </ul>
+                </div>
 
-    <h2 class="section-title">Education & Certificates</h2>
-    <hr class="horizontal-rule">
+                <div class="skills-category">
+                    <span class="category-label">Certifications:</span>
+                    <ul>
+                        <li>Sun Certified Java Programmer (SCJP)</li> 
+                        <li>Sun Certified Web Components Developer (SCWCD)</li>
+                        <li> Sun Certified Web Services Developer (SCWSD)</li>
+                    </ul>
+                </div>
+            </div>
 
-    <div class="content-section">
-        <div class="skills-category">
-            <span class="category-label">Education:</span>
-            <ul>
-                <li>Specialist of "Computing machinery and automated systems software". <br/>Ufa State Petroleum Technical University.<br/>Master's Level Equivalent, honor diploma.</li>
-            </ul>
-        </div>
+                <h2 class="section-title">Accomplishments & Hobbies</h2>
+            <hr class="horizontal-rule">
 
-        <div class="skills-category">
-            <span class="category-label">Certifications:</span>
-            <ul>
-                <li>Sun Certified Java Programmer (SCJP)</li> 
-                <li>Sun Certified Web Components Developer (SCWCD)</li>
-                <li> Sun Certified Web Services Developer (SCWSD)</li>
-            </ul>
-        </div>
-    </div>
+            <div class="content-section">
+                <div class="accomplishment">
+                    <span class="category-label">Publications:</span>
+                    <ul>
+                        <li><a href="https://bugzmanov.github.io/nes_ebook/index.html" class="link">Writing NES Emulator In Rust</a></li>
+                        <li><a href="https://bugzmanov.github.io/cleancode-critique/" class="link">Critical Analysis of "Clean Code" by R.C. Martin</a></li>
+                    </ul>
+                </div>
+                
+                <div class="accomplishment">
+                    <span class="category-label">Projects on github:</span>
+                    <a href="https://github.com/bugzmanov" class="link">https://github.com/bugzmanov</a>
+                </div>
+                
+                <div class="accomplishment">
+                    <span class="category-label">Public speaking:</span>
+                    <a href="https://www.youtube.com/watch?v=4pTDhgWW6ko" class="link">Using scala in an enterprise environment, Scaladev 2013 (in Russian)</a>
+                </div>
+            </div>
 
-        <h2 class="section-title">Accomplishments & Hobbies</h2>
-    <hr class="horizontal-rule">
-
-    <div class="content-section">
-        <div class="accomplishment">
-            <span class="category-label">Publications:</span>
-            <ul>
-                <li><a href="https://bugzmanov.github.io/nes_ebook/index.html" class="link">Writing NES Emulator In Rust</a></li>
-                <li><a href="https://bugzmanov.github.io/cleancode-critique/" class="link">Critical Analysis of "Clean Code" by R.C. Martin</a></li>
-            </ul>
-        </div>
-        
-        <div class="accomplishment">
-            <span class="category-label">Projects on github:</span>
-            <a href="https://github.com/bugzmanov" class="link">https://github.com/bugzmanov</a>
-        </div>
-        
-        <div class="accomplishment">
-            <span class="category-label">Public speaking:</span>
-            <a href="https://www.youtube.com/watch?v=4pTDhgWW6ko" class="link">Using scala in an enterprise environment, Scaladev 2013 (in Russian)</a>
         </div>
     </div>
-    </section>
-
 </body>
 </html>
