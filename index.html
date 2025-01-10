@@ -1,122 +1,408 @@
-
 <!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+</head> 
+<style>
+        /* Reset styles */
+        body {
+            margin: 0;
+            padding: 27pt 36pt 36pt 54pt;
+            max-width: 752pt;
+            font-family: "Times New Roman", serif;
+            color: #000000;
+            background-color: #ffffff;
+            font-size: 11pt;
+            line-height: 1.15;
+        }
 
-  
-  <meta name="description" content=" Blog Archives Recent Posts ">
-  
+        /* Typography */
+        .heading {
+            font-size: 16pt;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1em;
+        }
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+        .section-title {
+            font-size: 16pt;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
 
-  
-  <link rel="canonical" href="http://yoursite.com">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+        /* Layout */
+        .content-section {
+            margin-left: 18pt;
+            line-height: 1.15;
+        }
 
-  
+        .horizontal-rule {
+            border: none;
+            border-top: 1px solid #000000;
+            margin: 10px 0;
+        }
 
-</head>
+        /* Experience section */
+        .experience-table {
+            width: 100%;
+            border-spacing: 0;
+            border-collapse: collapse;
+            margin-right: auto;
+        }
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
-  
-    <h2>A blogging framework for hackers.</h2>
-  
-</hgroup>
+        .company-cell {
+            border-right: 1px solid #000000;
+            padding: 5pt;
+            width: 123pt;
+            vertical-align: top;
+        }
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:yoursite.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
+        .details-cell {
+            padding: 5pt;
+            vertical-align: top;
+            width: 399pt;
+        }
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-  </ul>
-</section>
+        .company-name {
+            font-weight: 700;
+        }
 
+        .job-title {
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
 
+        /* Technology tags */
+        .tech-stack {
+            margin-top: 10pt;
+            line-height: 1.0;
+        }
 
+        .tech-tag {
+            background-color: #e7eef5;
+            color: #073763;
+            font-size: 10pt;
+            padding: 2px 4px;
+            margin-right: 4px;
+            display: inline-block;
+        }
 
+        /* Lists */
+        .responsibilities {
+            margin: 0;
+            padding-left: 18pt;
+        }
 
-  
-</aside>
+        .responsibilities li {
+            margin-bottom: 0.5em;
+            line-height: 1.15;
+        }
 
+        /* Links */
+        .link {
+            color: #1155cc;
+            text-decoration: underline;
+        }
+
+        /* Skills section */
+        .skills-category {
+            margin-bottom: 0.5em;
+        }
+
+        .category-label {
+            font-weight: 700;
+        }
+
+        .accomplishment {
+            margin-bottom: 0.5em;
+        }
+        ul {
+            margin: 2px;
+        }
+    </style>
+
+<body>
+    <section style="float:left; position:fixed; width: 270px"> 
+
+    <center>
+        <img style="width:120px;border-radius: 50%; border: 2px solid black;" src="https://media.licdn.com/dms/image/v2/C5603AQGNIp3NcUTVtw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1599741663665?e=1741824000&v=beta&t=FNXSqCyqieFIg8x4rXfz88L85Eu-_2m5apzkUdCBk-s"/>
+    </center>
+    <h1 class="heading">Rafael Bagmanov</h1>
+    <!--<hr class="horizontal-rule">-->
+
+    <div class="contact-info" >
+        <p style="padding-left:30px">Address: Greater New York Area, NY <br/>
+           Phone: +1-(718)-upon-request</p>
+
+        <p style="text-align:center"><a target="_blank" href="http://github.com/bugzmanov">github</a> | 
+           <a target="_blank" href="http://linkedin.com/in/bugzmanov">linkedin</a> | 
+           <a target="_blank" href="https://twitter.com/bugzmanov">twitter</a>
+        </p>
+        <p style="text-align:center">...<br/><br/>
+        <a href="">Download CV (pdf)</a>
+        </p> 
     </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Your Name -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    </section> 
+    <section style="float:right; width: 700px">
 
-</footer>
-  
+    <!--<h2 class="heading">Rafael Bagmanov</h1>-->
+    <!--<hr class="horizontal-rule">-->
+    <!---->
+    <!--<div class="contact-info" >-->
+    <!--    <p>Email: <a href="mailto:removed@removed.com">removed@dontknow.com</a> -->
+    <!--       Address: New York, NY, 11222 -->
+    <!--       Phone: +1-(718)-removed>-->
+    <!--    <p>Social: <a href="http://github.com/bugzmanov">github.com/bugzmanov</a> | -->
+    <!--       <a href="http://linkedin.com/in/bugzmanov">linkedin.com/in/bugzmanov</a> | -->
+    <!--       <a href="https://twitter.com/bugzmanov">twitter.com/bugzmanov</a></p>-->
+    <!--</div>-->
 
+    <h2 class="section-title">Summary</h2>
+    <hr class="horizontal-rule">
 
+    <div class="contact-info" style="text-align: justify;">
+        <p><strong>Principal Software Engineer & Tech Lead</strong> with a track record of architecting and optimizing <strong>large-scale distributed systems</strong> handling <strong>petabytes of data</strong> daily. Experienced in leading cross-functional teams, building scalable infrastructure, and optimizing system performance. Strong expertise in multithreading, performance tuning, functional programming and data modeling.</p>
+        <p>Interests: <span class="tech-tag">big data</span> <span class="tech-tag">distributed systems</span> <span class="tech-tag">functional programming</span> <span class="tech-tag">mechanical sympathy</span></p>
+    </div>
 
+    <h2 class="section-title">Work Experience</h2>
+    <hr class="horizontal-rule">
+      <table class="experience-table">
+        <tr>
+            <td class="company-cell">
+                <div class="company-name">Apple Inc</div>
+                <div>Nov 2020 - Current</div>
+            </td>
+            <td class="details-cell">
+                <div class="job-title">Senior Software Engineer (ICT 4)</div>
+                <ul class="responsibilities">
+                    <li>Developing and optimizing the pricing logic and rules engine that drives Apple Store operations</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">scala</span>
+                    <span class="tech-tag">java</span>
+                    <span class="tech-tag">apache cassandra</span>
+                    <span class="tech-tag">oracle db</span>
+                    <span class="tech-tag">apache kafka</span>
+                    <span class="tech-tag">openapi</span>
+                    <span class="tech-tag">rust</span>
+                </div>
+            </td>
+        </tr>
 
+        <tr>
+            <td class="company-cell">
+                <div class="company-name">Integral Ad Science</div>
+                <div>Feb 2015 - Aug 2020</div>
+            </td>
+            <td class="details-cell">
+                <div class="job-title">Principal software engineer</div>
+                <ul class="responsibilities">
+                    <li>Led cross-team re-platforming efforts in core architecture and design.</li>
+                    <li>Led development and design of near real-time platform and streaming applications: fraud detection, user exposure tracking & engagement optimization, campaign monitoring</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">scala</span>
+                    <span class="tech-tag">java</span>
+                    <span class="tech-tag">cats</span>
+                    <span class="tech-tag">apache spark</span>
+                    <span class="tech-tag">apache flink</span>
+                    <span class="tech-tag">apache kafka</span>
+                    <span class="tech-tag">aerospike</span>
+                    <span class="tech-tag">graphite</span>
+                    <span class="tech-tag">aws</span>
+                </div>
+            </td>
+        </tr>
 
+        <tr>
+            <td class="company-cell">
+                <div class="company-name">Pellucid Analytics</div>
+                <div>Oct 2014 - Feb 2015</div>
+            </td>
+            <td class="details-cell">
+                <div class="job-title">Senior scala developer</div>
+                <ul class="responsibilities">
+                    <li>Designed and developed backend services for financial analytics tools.</li>
+                    <li>Optimized data modeling for complex financial reports.</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">scala</span>
+                    <span class="tech-tag">scalaz</span>
+                    <span class="tech-tag">apache cassandra</span>
+                    <span class="tech-tag">play! framework</span>
+                    <span class="tech-tag">datomic</span>
+                </div>
+            </td>
+        </tr>
 
+        <tr>
+            <td class="company-cell">
+                <div class="company-name">Grid Dynamics</div>
+                <div>Feb 2012 - Oct 2014</div>
+            </td>
+            <td class="details-cell">
+                <div class="job-title">Senior software engineer</div>
+                <ul class="responsibilities">
+                    <li>Led development of <a href="https://highlyscalable.wordpress.com/2013/08/20/in-stream-big-data-processing/">streaming data platform</a> using open source solutions</li>
+                    <li>Led development and design of <a href="https://github.com/griddynamics/OpenGenesis">CI/CD platform for release engineering</a></li>
+                    <li>Participated in a project of porting <strong>apache storm 0.9.0</strong> from <strong>clojure</strong> to <strong>java</strong></li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">scala</span>
+                    <span class="tech-tag">akka</span>
+                    <span class="tech-tag">apache kafka</span>
+                    <span class="tech-tag">apache storm</span>
+                    <span class="tech-tag">clojure</span>
+                    <span class="tech-tag">apache cassandra</span>
+                </div>
+            </td>
+        </tr>
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
+        <tr>
+            <td class="company-cell">
+                <div class="company-name">Informatica</div>
+                <div>Sep 2011 - Feb 2012</div>
+            </td>
+            <td class="details-cell">
+                <div class="job-title">Senior software engineer</div>
+                <ul class="responsibilities">
+                    <li>Developed and enhanced components of the <strong>Data Master Management Solution</strong></li>
+                    <li><strong>Led code quality initiatives</strong>, implementing best practices for unit testing and CI/CD pipelines</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">java</span>
+                    <span class="tech-tag">ejb</span>
+                    <span class="tech-tag">java ee</span>
+                    <span class="tech-tag">jsf</span>
+                </div>
+            </td>
+        </tr>
 
+        <tr>
+            <td class="company-cell">
+                <div class="company-name">Kentor</div>
+                <div>Nov 2009 – Sep 2011</div>
+            </td>
+            <td class="details-cell">
+                <div class="job-title">Senior software engineer</div>
+                <ul class="responsibilities">
+                    <li>Designed and developed an integrated messaging solution for mobile and web, enabling <strong>near real-time communication</strong> between drivers</li>
+                    <li>Contributed to a web-based <strong>back-office application</strong> for managing customer contracts and registrations for <strong>Yota</strong></li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">java</span>
+                    <span class="tech-tag">gwt</span>
+                    <span class="tech-tag">hibernate</span>
+                    <span class="tech-tag">spring framework</span>
+                    <span class="tech-tag">rabbitmq</span>
+                    <span class="tech-tag">oracle db</span>
+                </div>
+            </td>
+        </tr>
 
+        <tr>
+            <td class="company-cell">
+                <div class="company-name">Exigen Services</div>
+                <div>Feb 2008 - Nov 2009</div>
+            </td>
+            <td class="details-cell">
+                <div class="job-title">Software engineer</div>
+                <ul class="responsibilities">
+                    <li><strong>Developed and maintained</strong> an <strong>EJB-based platform</strong> for <strong>multi-channel customer interactions</strong>, supporting web, mobile, and call center services for a major European telecom provider.</li>
+                    <li>Implemented and optimized back-end services on <strong>BEA WebLogic</strong>, improving system reliability and maintainability</li>
+                    <li><strong>Contributed to service-oriented architecture (SOA) development</strong>, enabling interoperability across multiple business systems</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">java</span>
+                    <span class="tech-tag">bea weblogic</span>
+                    <span class="tech-tag">hibernate</span>
+                    <span class="tech-tag">spring framework</span>
+                    <span class="tech-tag">service oriented architecture</span>
+                    <span class="tech-tag">ejb</span>
+                </div>
+            </td>
+        </tr>
+    </table>
 
+    <h2 class="section-title">Skills</h2>
+    <hr class="horizontal-rule">
 
+    <div class="content-section">
+        <div class="skills-category">
+            <span class="category-label">Programming Languages:</span>
+            Scala, Java, Rust, Clojure, Kotlin, JavaScript/TypeScript
+        </div>
+        <div class="skills-category">
+            <span class="category-label">Distributed Systems & Streaming:</span>
+            Apache Kafka, Apache Flink, Apache Spark, Apache Hadoop, Apache Storm
+        </div>
+        <div class="skills-category">
+            <span class="category-label">Databases & Storage:</span>
+            vast experience with relational (MySQL, Oracle, PostgreSQL, DB2) and NoSQL (Apache Cassandra, Aerospike, Redis, Elasticsearch, DynamoDB) databases
+        </div>
+        <div class="skills-category">
+            <span class="category-label">Cloud & DevOps:</span>
+            AWS (EC2, S3, MSK, Lambda, CloudFormation), Kubernetes, Docker, Terraform
+        </div>
+        <div class="skills-category">
+            <span class="category-label">Software Architecture:</span>
+            Microservices, Event-Driven Systems, Functional Programming, Type-Driven Development
+        </div>
+        <div class="skills-category">
+            <span class="category-label">Performance & Optimization:</span>
+            JVM Tuning, Multithreading, Memory Management, High-Throughput Systems
+        </div>
+        <div class="skills-category">
+            <span class="category-label">Leadership & Collaboration:</span>
+            Technical Mentorship, Code Reviews, System Design, Cross-Functional Collaboration
+        </div>
+    </div>
+
+    <h2 class="section-title">Education & Certificates</h2>
+    <hr class="horizontal-rule">
+
+    <div class="content-section">
+        <div class="skills-category">
+            <span class="category-label">Education:</span>
+            <ul>
+                <li>Specialist of "Computing machinery and automated systems software". <br/>Ufa State Petroleum Technical University.<br/>Master's Level Equivalent, honor diploma.</li>
+            </ul>
+        </div>
+
+        <div class="skills-category">
+            <span class="category-label">Certifications:</span>
+            <ul>
+                <li>Sun Certified Java Programmer (SCJP)</li> 
+                <li>Sun Certified Web Components Developer (SCWCD)</li>
+                <li> Sun Certified Web Services Developer (SCWSD)</li>
+            </ul>
+        </div>
+    </div>
+
+        <h2 class="section-title">Accomplishments & Hobbies</h2>
+    <hr class="horizontal-rule">
+
+    <div class="content-section">
+        <div class="accomplishment">
+            <span class="category-label">Publications:</span>
+            <ul>
+                <li><a href="https://bugzmanov.github.io/nes_ebook/index.html" class="link">Writing NES Emulator In Rust</a></li>
+                <li><a href="https://bugzmanov.github.io/cleancode-critique/" class="link">Critical Analysis of "Clean Code" by R.C. Martin</a></li>
+            </ul>
+        </div>
+        
+        <div class="accomplishment">
+            <span class="category-label">Projects on github:</span>
+            <a href="https://github.com/bugzmanov" class="link">https://github.com/bugzmanov</a>
+        </div>
+        
+        <div class="accomplishment">
+            <span class="category-label">Public speaking:</span>
+            <a href="https://www.youtube.com/watch?v=4pTDhgWW6ko" class="link">Using scala in an enterprise environment, Scaladev 2013 (in Russian)</a>
+        </div>
+    </div>
+    </section>
 
 </body>
 </html>
